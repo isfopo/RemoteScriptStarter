@@ -33,3 +33,7 @@ Once the folder has been successfully copied you can start or restart Ableton fo
 This step, running the script and restarting Ableton, will need to be repeated in order to see any changes in your code, but I would suggest doing this before making any code changes in order to check my sanity. Please let me know if there are any issues. If the code does not compile or the script is not available then it is likely that there is an error in the code.
 
 Note: Mac users who are not using their default version of python or have not changed their path to python3 will have to use `python3` instead of `python` to run these scripts
+
+## Development Notes
+
+Folders that start with a `_`, like `_Framework`, are included in this repo for convenience, but they should not be modified here. These are modules that will be exposed to your remote script within the Ableton environment, meaning the modules in this folder are never actually used. Having them in this folder prevents import error warnings and allows for auto-complete in your IDE. These modules where download from https://github.com/gluon/AbletonLive11_MIDIRemoteScripts.

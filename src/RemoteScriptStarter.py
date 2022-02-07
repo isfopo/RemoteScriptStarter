@@ -18,3 +18,4 @@ class RemoteScriptStarter(ControlSurface):
         """clean things up on disconnect"""
         ControlSurface.disconnect(self)
         return None
+
