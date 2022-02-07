@@ -8,7 +8,7 @@ The goal of this repo is to make creating a new Remote Script easy, so if there 
 If you don't already, install a stable version of python on your computer. A download can be found [here](https://www.python.org/downloads/). This repo has not been tested with MacOS' default version of python (2), but if you find that it works please let me know.
 
 ### Step 1: Clone the repo
-Use git clone to make a copy on your local machine. At this point I would suggest naming your project with git clone option name argument.
+Use git clone to make a copy on your local machine. This project folder does not need to be put in any specific place, so feel free to put in a projects folder or Desktop. At this point I would suggest naming your project with git clone option name argument.
 
 ```shell
 git clone https://github.com/isfopo/RemoteScriptStarter.git <YourRemoteScriptName>
