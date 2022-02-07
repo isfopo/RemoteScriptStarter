@@ -37,3 +37,5 @@ Note: Mac users who are not using their default version of python or have not ch
 ## Development Notes
 
 Folders that start with a `_`, like `_Framework`, are included in this repo for convenience, but they should not be modified here. These are modules that will be exposed to your remote script within the Ableton environment, meaning the modules in this folder are never actually used. Having them in this folder prevents import error warnings and allows for auto-complete in your IDE. These modules where download from https://github.com/gluon/AbletonLive11_MIDIRemoteScripts.
+
+If you are getting some kind of import error for the `Live` module, like `Warning: Import "Live" could not be resolved`, that can be ignored. Again, this is a module that will be used in the Ableton environment.
