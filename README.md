@@ -5,7 +5,7 @@
 The goal of this repo is to make creating a new Remote Script easy, so if there are any difficulties please let me know in the issues.
 
 ### Step 0: Have python installed
-If you don't already, install a LTS version of python on your computer. A download can be found [here](https://www.python.org/downloads/). This repo has not been tested with MacOS' default version of python (2), but if you find that it works please let me know.
+If you don't already, install a stable version of python on your computer. A download can be found [here](https://www.python.org/downloads/). This repo has not been tested with MacOS' default version of python (2), but if you find that it works please let me know.
 
 ### Step 1: Clone the repo
 Use git clone to make a copy on your local machine. At this point I would suggest naming your project with git clone option name argument.
