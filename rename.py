@@ -23,14 +23,23 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--name', required=False)
 parser.add_argument('--old', required=False)
 
+oldName = parser.parse_args().old or "RemoteScriptStarter"
+newName = parser.parse_args().name or os.path.basename(currentDir)
+
 for fileName in os.listdir(srcDir):
     with open(os.path.join(srcDir, fileName), 'r') as file:
         filedata = file.read()
 
     filedata = filedata.replace(
-        parser.parse_args().old or "RemoteScriptStarter",
-        parser.parse_args().name or os.path.basename(currentDir)
+        oldName,
+        newName
     )
 
     with open(os.path.join(srcDir, fileName), 'w') as file:
         file.write(filedata)
+
+    if (fileName == oldName + ".py"):
+        os.rename(
+            os.path.join("src", oldName + ".py"),
+            os.path.join("src", newName + ".py")
+        )
