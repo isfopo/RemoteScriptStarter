@@ -43,3 +43,7 @@ for fileName in os.listdir(srcDir):
             os.path.join("src", oldName + ".py"),
             os.path.join("src", newName + ".py")
         )
+
+print("""
+    Your remote script was successfully renamed from {oldName} to {newName}
+""".format(oldName=oldName, newName=newName))

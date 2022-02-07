@@ -59,3 +59,8 @@ if (os.path.isdir(outputDir)):
     shutil.rmtree(outputDir)
 
 shutil.copytree(srcDir, outputDir)
+
+print("""
+    Your code was successfully moved to your User Library folder.
+    Restart Ableton to see your Remote Script.
+""")
