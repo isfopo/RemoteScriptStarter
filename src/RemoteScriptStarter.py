@@ -1,6 +1,5 @@
 from __future__ import with_statement
 
-import sys
 import Live
 
 from _Framework.ControlSurface import ControlSurface
@@ -18,4 +17,3 @@ class RemoteScriptStarter(ControlSurface):
         """clean things up on disconnect"""
         ControlSurface.disconnect(self)
         return None
-
