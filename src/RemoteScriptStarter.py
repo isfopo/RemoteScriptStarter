@@ -18,6 +18,6 @@ class RemoteScriptStarter(ControlSurface):
         # write your init code here
 
     def disconnect(self):
-        """clean things up on disconnect"""
+        """clean up on disconnect"""
         ControlSurface.disconnect(self)
         return None
