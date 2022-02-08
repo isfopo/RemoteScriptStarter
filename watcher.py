@@ -37,6 +37,10 @@ class Watcher(object):
                 break
             except FileNotFoundError:
                 # Action on file not found
+                raise Exception("""
+                File not found, check your version number
+                and use 'Live {version} in the --version argument
+                """)
                 pass
 
 # Call this function each time a change happens
