@@ -11,6 +11,8 @@
   This script assumes you are using the lastest version of Live that is
   installed on your machine. If you are not or this script is throwing errors,
   use the `--version` flag to specific your version. Example: "Live 11.0.12"
+
+  Use `ctrl + c` or `cmd + c` to interrupt.
 '''
 
 import os
