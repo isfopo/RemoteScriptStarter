@@ -52,6 +52,20 @@ class Watcher(object):
                 """)
 
 
+def getVersionKey(version):
+    search = re.search('(\\d+)\\.(\\d+)\\.(\\d+)', version)
+    if search:
+        major, minor, bug = search.groups()
+        return int(major), int(minor), int(bug)
+
+
+def onChange(filename):
+    os.system('cls' if platform.system() == 'Windows' else 'clear')
+    with open(filename, encoding='utf-8') as file:
+        for line in (file.readlines()[-100:]):
+            print(line, end='')
+
+
 ABLETONPATHWIN = "C:\\Users\\{user}\\AppData\\Roaming\\Ableton\\"
 
 ABLETONPATHMAC = "Macintosh HD/Users/{user}/Library/Preferences/Ableton/"
@@ -73,14 +87,6 @@ abletonPath = (
     ABLETONPATHWIN if platform.system() == 'Windows' else ABLETONPATHMAC
 ).format(user=user)
 
-
-def getVersionKey(version):
-    search = re.search('(\\d+)\\.(\\d+)\\.(\\d+)', version)
-    if search:
-        major, minor, bug = search.groups()
-        return int(major), int(minor), int(bug)
-
-
 version = args.version or max(
     filter(
         lambda name: not name == "Live Reports", os.listdir(abletonPath)
@@ -92,18 +98,6 @@ logPath = os.path.join(
     version,
     LOGPATHWIN if platform.system() == 'Windows' else LOGPATHMAC
 )
-
-
-def clear():
-    os.system('cls' if platform.system() == 'Windows' else 'clear')
-
-
-def onChange(filename):
-    clear()
-    with open(filename, encoding='utf-8') as file:
-        for line in (file.readlines()[-100:]):
-            print(line, end='')
-
 
 watcher = Watcher(logPath, onChange)
 watcher.watch()
