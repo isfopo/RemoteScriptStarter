@@ -7,33 +7,60 @@
   This script also takes a guess at your username for the path. If this guess
   is incorrect or there is some kind of error, try adding your username with
   the `--user` flag.
+
+  This script assumes you are using the lastest version of Live that is
+  installed on your machine. If you are not or this script is throwing errors,
+  use the `--version` flag to specific your version. Example: "Live 11.0.12"
 '''
 
 import os
+import re
 import getpass
 import argparse
 import platform
 
 from watcher import Watcher
 
-LOGPATHWIN = """C:\\Users\\{user}\\AppData\\Roaming\\Ableton\\Live 11.0.12\\Preferences\\Log.txt"""
+ABLETONPATHWIN = "C:\\Users\\{user}\\AppData\\Roaming\\Ableton\\"
 
-LOGPATHMAC = """
-Macintosh HD/Users/{user}/Library/Preferences/Ableton/Live x.x.x/Log.txt
-"""
+ABLETONPATHMAC = "Macintosh HD/Users/{user}/Library/Preferences/Ableton/"
+
+LOGPATHWIN = "Preferences\\Log.txt"
+
+LOGPATHMAC = "Log.txt"
 
 parser = argparse.ArgumentParser(description='Install remote script')
 parser.add_argument('--user', '-your account username', required=False)
+parser.add_argument('--version', '-your version of Live', required=False)
 
 args = parser.parse_args()
 
 user = args.user or getpass.getuser()
 
-# need to deal with getting the lastest version number
 
-logPath = (
-    LOGPATHWIN if platform.system() == 'Windows' else LOGPATHMAC
+abletonPath = (
+    ABLETONPATHWIN if platform.system() == 'Windows' else ABLETONPATHMAC
 ).format(user=user)
+
+
+def getVersionKey(version):
+    search = re.search('(\\d+)\\.(\\d+)\\.(\\d+)', version)
+    if search:
+        major, minor, bug = search.groups()
+        return int(major), int(minor), int(bug)
+
+
+version = args.version or max(
+    filter(
+        lambda name: not name == "Live Reports", os.listdir(abletonPath)
+    ), key=getVersionKey
+)
+
+logPath = os.path.join(
+    abletonPath,
+    version,
+    LOGPATHWIN if platform.system() == 'Windows' else LOGPATHMAC
+)
 
 
 def clear():
