@@ -37,4 +37,3 @@ class Watcher(object):
                 and use 'Live {version} in the --version argument
                 """)
                 pass
-
