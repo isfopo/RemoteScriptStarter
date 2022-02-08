@@ -15,4 +15,10 @@
 
   As you can see, this is simply assigning number, that represent MIDI note
   or CCs, depending on how they are used in the context of the script.
+
+  To add these an another file, add:
+
+  from mappings import *
+
+  with other import
 """
