@@ -1,4 +1,4 @@
-from RemoteScriptStarter import RemoteScriptStarter
+from .RemoteScriptStarter import RemoteScriptStarter
 
 
 def create_instance(c_instance):
