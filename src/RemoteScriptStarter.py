@@ -5,8 +5,9 @@ import Live
 from _Framework.ControlSurface import ControlSurface
 from _Framework.SliderElement import SliderElement
 from _Framework.ButtonElement import ButtonElement
+from _Framework.TransportComponent import TransportComponent
 
-from .mappings import types, BUTTONCHANNEL, SLIDERCHANNEL
+from .mappings import PLAY, REC, STOP, types, BUTTONCHANNEL, SLIDERCHANNEL
 
 
 class RemoteScriptStarter(ControlSurface):
@@ -21,7 +22,9 @@ class RemoteScriptStarter(ControlSurface):
 
             self._note_map = []
             self._ctrl_map = []
-            self._load_MIDI_map()
+            self._load_mappings()
+
+            self._setup_transport()
 
             # write your init code here
 
@@ -29,6 +32,13 @@ class RemoteScriptStarter(ControlSurface):
         """clean up on disconnect"""
         ControlSurface.disconnect(self)
         return None
+
+    def _setup_transport(self):
+        transport = TransportComponent()
+        transport.name = 'Transport'
+        transport.set_play_button(self._note_map[PLAY])
+        transport.set_stop_button(self._note_map[STOP])
+        transport.set_record_button(self._note_map[REC])
 
     def _load_mappings(self):
         momentary = True

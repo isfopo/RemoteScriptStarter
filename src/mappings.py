@@ -39,3 +39,7 @@ class types:
 
 BUTTONCHANNEL = 0
 SLIDERCHANNEL = 1
+
+PLAY = 56  # Global play
+STOP = 57  # Global stop
+REC = 58  # Global record
