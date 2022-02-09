@@ -6,7 +6,7 @@ from _Framework.ControlSurface import ControlSurface
 from _Framework.SliderElement import SliderElement
 from _Framework.ButtonElement import ButtonElement
 
-from mappings import types, BUTTONCHANNEL, SLIDERCHANNEL
+from .mappings import types, BUTTONCHANNEL, SLIDERCHANNEL
 
 
 class RemoteScriptStarter(ControlSurface):
