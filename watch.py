@@ -64,7 +64,7 @@ def getVersionKey(version):
 def onChange(filename):
     os.system('cls' if platform.system() == 'Windows' else 'clear')
     with open(filename, encoding='utf-8') as file:
-        for line in (file.readlines()[-100:]):
+        for line in (file.readlines()[-500:]):
             print(line, end='')
 
 
