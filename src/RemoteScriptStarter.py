@@ -11,6 +11,8 @@ from .mappings import PLAY, REC, STOP, types, BUTTONCHANNEL, SLIDERCHANNEL
 
 
 class RemoteScriptStarter(ControlSurface):
+    __module__ = __name__
+    __doc__ = "Simple Starter Script"
 
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)
