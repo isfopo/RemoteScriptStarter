@@ -7,7 +7,7 @@ from _Framework.SliderElement import SliderElement
 from _Framework.ButtonElement import ButtonElement
 from _Framework.TransportComponent import TransportComponent
 
-from .mappings import PLAY, REC, STOP, types, BUTTONCHANNEL, SLIDERCHANNEL
+from .mappings import *
 
 
 class RemoteScriptStarter(ControlSurface):
@@ -41,6 +41,16 @@ class RemoteScriptStarter(ControlSurface):
         transport.set_play_button(self._note_map[PLAY])
         transport.set_stop_button(self._note_map[STOP])
         transport.set_record_button(self._note_map[REC])
+        transport.set_nudge_buttons(
+            self._note_map[NUDGEUP], self._note_map[NUDGEDOWN])
+        transport.set_overdub_button(self._note_map[OVERDUB])
+        transport.set_metronome_button(self._note_map[METRONOME])
+        transport.set_tap_tempo_button(self._note_map[TAPTEMPO])
+        transport.set_tempo_control(self._ctrl_map[TEMPOCONTROL])
+        transport.set_loop_button(self._note_map[LOOP])
+        transport.set_punch_buttons(
+            self._note_map[PUNCHIN], self._note_map[PUNCHOUT])
+        transport.set_arrangement_overdub_button(self._note_map[ARR_OVERDUB])
 
     def _load_mappings(self):
         momentary = True

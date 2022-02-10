@@ -43,3 +43,19 @@ SLIDERCHANNEL = 1
 PLAY = 56  # Global play
 STOP = 57  # Global stop
 REC = 58  # Global record
+TAPTEMPO = 59  # Tap tempo
+NUDGEUP = 60  # Tempo Nudge Up
+NUDGEDOWN = 61  # Tempo Nudge Down
+LOOP = 62  # Loop on/off
+PUNCHIN = 63  # Punch in
+PUNCHOUT = 64  # Punch out
+OVERDUB = 65  # Overdub on/off
+METRONOME = 66  # Metronome on/off
+ARR_OVERDUB = 67
+
+# Sliders / Knobs
+# ---------------
+# Valid CC assignments are 0 to 127, or -1 for NONE
+
+TEMPOCONTROL = 48
+SONGPOSITIONCONTROL = 49
