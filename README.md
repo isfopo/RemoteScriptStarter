@@ -4,6 +4,7 @@
 More Examples and Resources:
 
 [Push2UserModeScript by jzgdev](https://github.com/jzgdev/Push2UserModeScript)
+[Push 2 Midi Mappings](https://i2.wp.com/www.joshuacasper.com/contents/uploads/MidiMapping.png?ssl=1)
 
 ## Getting Started
 The goal of this repo is to make creating a new Remote Script easy, so if there are any difficulties please let me know in the issues.
