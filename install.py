@@ -33,7 +33,7 @@ import argparse
 import platform
 
 USERLIBWIN = "C:\\Users\\{user}\\Documents\\Ableton\\User Library"
-USERLIBMAC = "Macintosh HD/Users/{user}/Music/Ableton/User Library"
+USERLIBMAC = "/Users/{user}/Music/Ableton/User Library"
 
 parser = argparse.ArgumentParser(description='Install remote script')
 parser.add_argument('--path', '-path to User Library folder', required=False)
