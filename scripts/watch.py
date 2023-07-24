@@ -70,7 +70,7 @@ def onChange(filename):
 
 ABLETONPATHWIN = "C:\\Users\\{user}\\AppData\\Roaming\\Ableton\\"
 
-ABLETONPATHMAC = "Macintosh HD/Users/{user}/Library/Preferences/Ableton/"
+ABLETONPATHMAC = "/Users/{user}/Library/Preferences/Ableton/"
 
 LOGPATHWIN = "Preferences\\Log.txt"
 
