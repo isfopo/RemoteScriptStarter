@@ -2,7 +2,7 @@ install:
 	python3 scripts/install.py --name LiveRemoteServer
 
 watch:
-	python3 scripts/watch.py --version 'Live 11.2.11'
+	python3 scripts/watch.py --version 'Live 11.3.4'
 
 close-set:
 	pkill -x Ableton Live 11 Suite
